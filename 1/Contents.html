@@ -1,392 +1,10 @@
-<!--
-
-BUG:
-open up 'Using the sequencer window'
-try expanding both 'variables' and 'commands' one likes closing
-
-Create a mobile version of navbar
-allow for opening the sidenav
-
--->
-
 <!doctype html>
-<html>
-<head>
-	<title>DCP Docs: Contents</title>
-	<link href="css/main.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-	<style type="text/css">
-	.waves-effect.waves-dcpblue .waves-ripple {
-		background-color: #00e5ff;
-	}
-</style>
-<script type="text/javascript">
-	$(document).ready(function(){
-		$('.sidenav').sidenav();
-		$('.collapsible').collapsible();
-		var elements = document.getElementsByClassName("mydropdown");
-		for(var i=0; i<elements.length; i++) {
-			elements[i].onclick = dropFlip;;
-		}
-	});
-	function dropFlip(e) {
-		var c = e.currentTarget.childNodes;
-		var i;
-		var d;
-		for (i = 0; i < c.length; i++) {
-			if (c[i].nodeName == "SPAN") {
-				d = c[i];
-			}
-		}
-		c = d.childNodes;
-		for (i = 0; i < c.length; i++) {
-			if (c[i].nodeName == "I") {
-				flipDisplay(c[i]);
-			}
-		}
-	}
-	function flipDisplay (element) {
-		if (element.style.display == "none") {
-			element.style.display = "inline";
-		} else {
-			element.style.display = "none";
-		}
-	}
-</script>
-</head>
-<body class="black">
-
-	<div class="navbar-fixed">
-		<nav class="grey darken-4">
-			<div class="nav-wrapper container">
-				<div id="nav-mobile" class="right hide-on-med-and-down">
-					<a class="waves-effect waves-light btn cyan accent-4" href="https://www.google.com" target="_tab">Asset Store Page</a>&emsp;
-					<a class="waves-effect waves-light btn cyan accent-4">Unity Forum</a>&emsp;
-					<a class="waves-effect waves-light btn cyan accent-4">Website</a>&emsp;
-					<a class="waves-effect waves-light btn cyan accent-4">Youtube Tutorials</a>&emsp;
-					<a class="waves-effect waves-light btn cyan accent-4">Contact Us</a>&emsp;
-					<a class="waves-effect waves-light btn cyan accent-4">FAQ</a>&emsp;
-				</div>
-				<a href="#" data-target="slide-out" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
-			</div>
-		</nav>
-	</div>
-
-	<ul id="slide-out" class="sidenav grey darken-3" style="transform: translateX(0%) !important;">
-		<div class="user-view" style="height: 160px; margin-bottom: 20px; margin-top: 10px;">
-			<div class="background">
-				<a href="http://www.databasecontrolpro.appspot.com/1/Contents.html" class="no-padding">
-					<img src="images/other/title2.png" style="width: 100%; height: 100%;">
-				</a>
-			</div>
-		</div>
-		<div class="divider grey darken-1" style="margin: 0"></div>
-		<li class="no-padding active cyan accent-4">
-			<a href="" class="collapsible-header waves-effect waves-dcpblue white-text">Contents</a>
-		</li>
-		<li class="no-padding">
-			<a href="" class="collapsible-header waves-effect waves-dcpblue white-text">Setting Up Database Control Pro</a>
-		</li>
-		<li class="no-padding">
-			<a href="" class="collapsible-header waves-effect waves-dcpblue white-text">Using the Demos</a>
-		</li>
-
-		<li class="no-padding">
-			<ul class="collapsible">
-				<div class="divider grey darken-1" style="margin: 0"></div>
-				<li class="bold">
-					<a class="collapsible-header waves-effect waves-light white-text mydropdown" style="padding: 0px; border-left: 1px solid; border-color: #757575; position: absolute; right: 0px;  z-index: 10; height: 48px;">
-						<span class="badge">
-							<i name="downarrow" class="material-icons white-text" style="margin: 0;">keyboard_arrow_down</i>
-							<i name="uparrow" class="material-icons white-text" style="display: none; margin: 0;">keyboard_arrow_up</i>
-						</span>
-					</a>
-					<a class="waves-effect waves-light white-text" style="padding-left: 16px; width: inherit;">
-						The Demos
-					</a>
-					<div class="collapsible-body grey darken-2">
-						<div class="divider grey darken-1" style="margin: 0"></div>
-						<ul>
-							<li><a href="" class="waves-effect waves-dcpblue accent-2 white-text">The Login Demo</a></li>
-							<li><a href="" class="waves-effect waves-dcpblue white-text">The Third Person Demo</a></li>
-							<li><a href="" class="waves-effect waves-dcpblue white-text">The City Constructor Demo</a></li>
-							<li><a href="" class="waves-effect waves-dcpblue white-text">The Chat Demo</a></li>
-						</ul>
-					</div>
-				</li>
-			</ul>
-		</li>
-
-		<li class="no-padding">
-			<ul class="collapsible">
-				<div class="divider grey darken-1" style="margin: 0"></div>
-				<li class="bold">
-					<a class="collapsible-header waves-effect waves-light white-text mydropdown" style="padding: 0px; border-left: 1px solid; border-color: #757575; position: absolute; right: 0px;  z-index: 10; height: 48px;">
-						<span class="badge">
-							<i name="downarrow" class="material-icons white-text" style="margin: 0;">keyboard_arrow_down</i>
-							<i name="uparrow" class="material-icons white-text" style="display: none; margin: 0;">keyboard_arrow_up</i>
-						</span>
-					</a>
-					<a class="waves-effect waves-light white-text" style="padding-left: 16px; width: inherit;">
-						Intro. to the Main Windows
-					</a>
-					<div class="collapsible-body grey darken-2">
-						<div class="divider grey darken-1" style="margin: 0"></div>
-						<ul>
-							<li><a href="" class="waves-effect waves-dcpblue accent-2 white-text">The Setup Window</a></li>
-							<li><a href="" class="waves-effect waves-dcpblue white-text">The Viewer Window</a></li>
-							<li><a href="" class="waves-effect waves-dcpblue white-text">The Sequencer Window</a></li>
-						</ul>
-					</div>
-				</li>
-			</ul>
-		</li>
-
-		<li class="no-padding">
-			<ul class="collapsible">
-				<div class="divider grey darken-1" style="margin: 0"></div>
-				<li class="bold">
-					<a class="collapsible-header waves-effect waves-light white-text mydropdown" style="padding: 0px; border-left: 1px solid; border-color: #757575; position: absolute; right: 0px;  z-index: 10; height: 48px;">
-						<span class="badge">
-							<i name="downarrow" class="material-icons white-text" style="margin: 0;">keyboard_arrow_down</i>
-							<i name="uparrow" class="material-icons white-text" style="display: none; margin: 0;">keyboard_arrow_up</i>
-						</span>
-					</a>
-					<a class="waves-effect waves-light white-text" style="padding-left: 16px; width: inherit;">
-						Using the Setup Window
-					</a>
-					<div class="collapsible-body grey darken-2">
-						<div class="divider grey darken-1" style="margin: 0"></div>
-						<ul>
-							<li><a href="" class="waves-effect waves-dcpblue accent-2 white-text">Setting Up a Project</a></li>
-							<li><a href="" class="waves-effect waves-dcpblue white-text">Creating a Database</a></li>
-							<li><a href="" class="waves-effect waves-dcpblue white-text">Creating a Command Sequence</a></li>
-							<li><a href="" class="waves-effect waves-dcpblue white-text">Publishing a Database</a></li>
-							<li><a href="" class="waves-effect waves-dcpblue white-text">Unpublishing a Database</a></li>
-						</ul>
-					</div>
-				</li>
-			</ul>
-		</li>
-
-		<li class="no-padding">
-			<ul class="collapsible">
-				<div class="divider grey darken-1" style="margin: 0"></div>
-				<li class="bold">
-					<a class="collapsible-header waves-effect waves-light white-text mydropdown" style="padding: 0px; border-left: 1px solid; border-color: #757575; position: absolute; right: 0px;  z-index: 10; height: 48px;">
-						<span class="badge">
-							<i name="downarrow" class="material-icons white-text" style="margin: 0;">keyboard_arrow_down</i>
-							<i name="uparrow" class="material-icons white-text" style="display: none; margin: 0;">keyboard_arrow_up</i>
-						</span>
-					</a>
-					<a class="waves-effect waves-light white-text" style="padding-left: 16px; width: inherit;">
-						Using the Viewer Window
-					</a>
-					<div class="collapsible-body grey darken-2">
-						<div class="divider grey darken-1" style="margin: 0"></div>
-						<ul>
-							<li><a href="" class="waves-effect waves-dcpblue accent-2 white-text">Opening a Database</a></li>
-							<li><a href="" class="waves-effect waves-dcpblue white-text">Editing a Database</a></li>
-							<li><a href="" class="waves-effect waves-dcpblue white-text">Updating a Database</a></li>
-						</ul>
-					</div>
-				</li>
-			</ul>
-		</li>
-
-		<li class="no-padding">
-			<ul class="collapsible">
-				<div class="divider grey darken-1" style="margin: 0"></div>
-				<li class="bold">
-					<a class="collapsible-header waves-effect waves-light white-text mydropdown" style="padding: 0px; border-left: 1px solid; border-color: #757575; position: absolute; right: 0px;  z-index: 10; height: 48px;">
-						<span class="badge">
-							<i name="downarrow" class="material-icons white-text" style="margin: 0;">keyboard_arrow_down</i>
-							<i name="uparrow" class="material-icons white-text" style="display: none; margin: 0;">keyboard_arrow_up</i>
-						</span>
-					</a>
-					<a class="waves-effect waves-light white-text" style="padding-left: 16px; width: inherit;">
-						Using the Sequencer Window
-					</a>
-					<div class="collapsible-body grey darken-2">
-						<div class="divider grey darken-1" style="margin: 0"></div>
-						<ul>
-							<li><a href="" class="waves-effect waves-dcpblue accent-2 white-text">Opening a Command Sequence</a></li>
-							<li><a href="" class="waves-effect waves-dcpblue white-text">Planning a Command Sequence</a></li>
-							<li><a href="" class="waves-effect waves-dcpblue white-text">Creating a Command Sequence</a></li>
-							<li class="no-padding">
-								<ul class="collapsible">
-									<div class="divider grey darken-1" style="margin: 0"></div>
-									<li class="bold">
-										<a class="collapsible-header waves-effect waves-light white-text mydropdown" style="padding: 0px; border-left: 1px solid; border-color: #757575; position: absolute; right: 0px;  z-index: 10; height: 48px;">
-											<span class="badge">
-												<i name="downarrow" class="material-icons white-text" style="margin: 0;">keyboard_arrow_down</i>
-												<i name="uparrow" class="material-icons white-text" style="display: none; margin: 0;">keyboard_arrow_up</i>
-											</span>
-										</a>
-										<a class="waves-effect waves-light white-text blue-grey darken-3" style="padding-left: 32px; width: inherit;">
-											Variables
-										</a>
-										<div class="collapsible-body blue-grey darken-2">
-											<div class="divider grey darken-1" style="margin: 0"></div>
-											<ul>
-												<li><a style="padding-left: 48px;" href="" class="waves-effect waves-dcpblue accent-2 white-text">Using Variables</a></li>
-												<li class="no-padding">
-													<ul class="collapsible">
-														<div class="divider grey darken-1" style="margin: 0"></div>
-														<li class="bold">
-															<a class="collapsible-header waves-effect waves-light white-text mydropdown" style="padding: 0px; border-left: 1px solid; border-color: #757575; position: absolute; right: 0px;  z-index: 10; height: 48px;">
-																<span class="badge">
-																	<i name="downarrow" class="material-icons white-text" style="margin: 0;">keyboard_arrow_down</i>
-																	<i name="uparrow" class="material-icons white-text" style="display: none; margin: 0;">keyboard_arrow_up</i>
-																</span>
-															</a>
-															<a class="waves-effect waves-light white-text blue-grey darken-2" style="padding-left: 48px; width: inherit;">
-																Variable Types
-															</a>
-															<div class="collapsible-body blue-grey darken-1">
-																<div class="divider grey darken-1" style="margin: 0"></div>
-																<ul>
-																	<li><a style="padding-left: 64px;" href="" class="waves-effect waves-dcpblue accent-2 white-text">Input Variables</a></li>
-																	<li><a style="padding-left: 64px;" href="" class="waves-effect waves-dcpblue white-text">Other Variables</a></li>
-																	<li><a style="padding-left: 64px;" href="" class="waves-effect waves-dcpblue white-text">Built-in Variables</a></li>
-																</ul>
-															</div>
-														</li>
-													</ul>
-												</li>
-											</ul>
-										</div>
-									</li>
-								</ul>
-							</li>
-							<li class="no-padding">
-								<ul class="collapsible">
-									<div class="divider grey darken-1" style="margin: 0"></div>
-									<li class="bold">
-										<a class="collapsible-header waves-effect waves-light white-text mydropdown" style="padding: 0px; border-left: 1px solid; border-color: #757575; position: absolute; right: 0px;  z-index: 10; height: 48px;">
-											<span class="badge">
-												<i name="downarrow" class="material-icons white-text" style="margin: 0;">keyboard_arrow_down</i>
-												<i name="uparrow" class="material-icons white-text" style="display: none; margin: 0;">keyboard_arrow_up</i>
-											</span>
-										</a>
-										<a class="waves-effect waves-light white-text blue-grey darken-3" style="padding-left: 32px; width: inherit;">
-											Commands
-										</a>
-										<div class="collapsible-body blue-grey darken-2">
-											<div class="divider grey darken-1" style="margin: 0"></div>
-											<ul>
-												<li><a style="padding-left: 48px;" href="" class="waves-effect waves-dcpblue accent-2 white-text">Get Data</a></li>
-												<li><a style="padding-left: 48px;" href="" class="waves-effect waves-dcpblue accent-2 white-text">Set Data</a></li>
-												<li><a style="padding-left: 48px;" href="" class="waves-effect waves-dcpblue accent-2 white-text">Return</a></li>
-												<li><a style="padding-left: 48px;" href="" class="waves-effect waves-dcpblue accent-2 white-text">If</a></li>
-												<li><a style="padding-left: 48px;" href="" class="waves-effect waves-dcpblue accent-2 white-text">For</a></li>
-												<li><a style="padding-left: 48px;" href="" class="waves-effect waves-dcpblue accent-2 white-text">Create Var</a></li>
-												<li><a style="padding-left: 48px;" href="" class="waves-effect waves-dcpblue accent-2 white-text">Set Var Value</a></li>
-												<li><a style="padding-left: 48px;" href="" class="waves-effect waves-dcpblue accent-2 white-text">Set Var Value Extra</a></li>
-												<li><a style="padding-left: 48px;" href="" class="waves-effect waves-dcpblue accent-2 white-text">Clear Cell</a></li>
-												<li><a style="padding-left: 48px;" href="" class="waves-effect waves-dcpblue accent-2 white-text">Clear Row</a></li>
-												<li><a style="padding-left: 48px;" href="" class="waves-effect waves-dcpblue accent-2 white-text">Clear Col</a></li>
-												<li><a style="padding-left: 48px;" href="" class="waves-effect waves-dcpblue accent-2 white-text">Del Row</a></li>
-												<li><a style="padding-left: 48px;" href="" class="waves-effect waves-dcpblue accent-2 white-text">Del Col</a></li>
-												<li><a style="padding-left: 48px;" href="" class="waves-effect waves-dcpblue accent-2 white-text">Ins Row</a></li>
-												<li><a style="padding-left: 48px;" href="" class="waves-effect waves-dcpblue accent-2 white-text">Ins Col</a></li>
-												<li><a style="padding-left: 48px;" href="" class="waves-effect waves-dcpblue accent-2 white-text">Float Ops</a></li>
-												<li><a style="padding-left: 48px;" href="" class="waves-effect waves-dcpblue accent-2 white-text">Int Ops</a></li>
-												<li><a style="padding-left: 48px;" href="" class="waves-effect waves-dcpblue accent-2 white-text">String Ops</a></li>
-												<li><a style="padding-left: 48px;" href="" class="waves-effect waves-dcpblue accent-2 white-text">Comment</a></li>
-												<li><a style="padding-left: 48px;" href="" class="waves-effect waves-dcpblue accent-2 white-text">Time Diff</a></li>
-											</ul>
-										</div>
-									</li>
-								</ul>
-							</li>
-							<li><a href="" class="waves-effect waves-dcpblue accent-2 white-text">How Commands Handle Errors</a></li>
-							<li><a href="" class="waves-effect waves-dcpblue accent-2 white-text">Command Sequence Efficiency</a></li>
-						</ul>
-					</div>
-				</li>
-			</ul>
-		</li>
-
-		<li class="no-padding">
-			<ul class="collapsible">
-				<div class="divider grey darken-1" style="margin: 0"></div>
-				<li class="bold">
-					<a class="collapsible-header waves-effect waves-light white-text mydropdown" style="padding: 0px; border-left: 1px solid; border-color: #757575; position: absolute; right: 0px;  z-index: 10; height: 48px;">
-						<span class="badge">
-							<i name="downarrow" class="material-icons white-text" style="margin: 0;">keyboard_arrow_down</i>
-							<i name="uparrow" class="material-icons white-text" style="display: none; margin: 0;">keyboard_arrow_up</i>
-						</span>
-					</a>
-					<a class="waves-effect waves-light white-text" style="padding-left: 16px; width: inherit;">
-						Other Windows
-					</a>
-					<div class="collapsible-body grey darken-2">
-						<div class="divider grey darken-1" style="margin: 0"></div>
-						<ul>
-							<li><a href="" class="waves-effect waves-dcpblue accent-2 white-text">Run Command Sequence Window</a></li>
-							<li><a href="" class="waves-effect waves-dcpblue white-text">Bug Window</a></li>
-						</ul>
-					</div>
-				</li>
-			</ul>
-		</li>
-
-		<li class="no-padding">
-			<ul class="collapsible">
-				<div class="divider grey darken-1" style="margin: 0"></div>
-				<li class="bold">
-					<a class="collapsible-header waves-effect waves-light white-text mydropdown" style="padding: 0px; border-left: 1px solid; border-color: #757575; position: absolute; right: 0px;  z-index: 10; height: 48px;">
-						<span class="badge">
-							<i name="downarrow" class="material-icons white-text" style="margin: 0;">keyboard_arrow_down</i>
-							<i name="uparrow" class="material-icons white-text" style="display: none; margin: 0;">keyboard_arrow_up</i>
-						</span>
-					</a>
-					<a class="waves-effect waves-light white-text" style="padding-left: 16px; width: inherit;">
-						Running a Command Seq at Runtime
-					</a>
-					<div class="collapsible-body grey darken-2">
-						<div class="divider grey darken-1" style="margin: 0"></div>
-						<ul>
-							<li><a href="" class="waves-effect waves-dcpblue accent-2 white-text">C#</a></li>
-							<li><a href="" class="waves-effect waves-dcpblue white-text">UnityScript</a></li>
-						</ul>
-					</div>
-				</li>
-			</ul>
-		</li>
-
-		<div class="divider grey darken-1" style="margin: 0"></div>
-		<li class="no-padding">
-			<a href="" class="collapsible-header waves-effect waves-dcpblue white-text">Window Shortcuts</a>
-		</li>
-		<li class="no-padding">
-			<a href="" class="collapsible-header waves-effect waves-dcpblue white-text">FAQ</a>
-		</li>
-		<li class="no-padding">
-			<a href="" class="collapsible-header waves-effect waves-dcpblue white-text">About</a>
-		</li>
-	</ul>
-
-
-
-	<main style="padding-left: 300px;">
-		<div class="container">
-			<h3 class="white-text">asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br>asdf<br></h3>
-
-			<div class="white-text">&copy; Solution Studios 2018</div>
-		</div>
-	</main>
-</body>
-<!-- InstanceBegin template="/Templates/Page.dwt" codeOutsideHTMLIsLocked="false" -->
-
-<!--
+<html><!-- InstanceBegin template="/Templates/Page.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
 <meta charset="utf-8">
+<!-- InstanceBeginEditable name="doctitle" -->
 <title>DCP Docs: Contents</title>
+<!-- InstanceEndEditable -->
 <link href="../css/main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -477,13 +95,18 @@ allow for opening the sidenav
     </div>
   </nav>
   <article>
+    <!-- InstanceBeginEditable name="LeftRightsOne" -->
     <div class="subLink_left">
     <a href="http://www.databasecontrolpro.appspot.com/1/UsefulLinks.html">Previous</a></div>
     
     <div class="subLink_right">
     <a href="http://www.databasecontrolpro.appspot.com/1/SettingUpDatabaseControlPro.html">Next</a></div>
+    <!-- InstanceEndEditable -->
     <br><br><br>
-    <div class="pageTitle">Contents</div>
+    <!-- InstanceBeginEditable name="PagePath" -->
+    <!-- InstanceEndEditable -->
+    <div class="pageTitle"> <!-- InstanceBeginEditable name="Page Name" --> Contents <!-- InstanceEndEditable --></div>
+    <!-- InstanceBeginEditable name="Page Text" -->
     <p> You can find links to all the pages on the left navagation bar at all times along with a few other important links. To return to this page click the 'Database Control Pro Documentation' text in the top left corner. </p>
     <div class="pageTitle"> Getting Started </div>
     <p> Database Control Pro is the perfect solution for creating a online server backend for your game. It allows you to implement systems such as, simple online loading and saving, complex accounts, in-game news, loading assets at runtime, storing player statistics, basic analytics, online chat, ... and so much more! </p>
@@ -494,22 +117,25 @@ allow for opening the sidenav
     <div class="pageTitle"> Tutorial Videos </div>
     <p>1. Quick Setup<br>
       A tutorial showing how to setup Database Control Pro in a project and how to setup the demo scenes. </p>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/M7oDDOigkJI?list=PLb0_DqnplxX8v6l66jOn1Y7vAeAN3Sy1X?ecver=1" frameborder="0" allowfullscreen></iframe>
+    <iframe style="margin-left: 20px;" width="560" height="315" src="https://www.youtube.com/embed/M7oDDOigkJI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <p>2. Basic Introduction<br>
       A tutorial following on from the Quick Setup Video showing the basics of the Database Control Pro editor windows. </p>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/c9sjxnJtI9A?list=PLb0_DqnplxX8v6l66jOn1Y7vAeAN3Sy1X?ecver=1" frameborder="0" allowfullscreen></iframe>
+    <iframe style="margin-left: 20px;" width="560" height="315" src="https://www.youtube.com/embed/c9sjxnJtI9A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <p>3. UI System<br>
       A tutorial showing the basics of how to use the UI Animation System which is included with Database Control Pro. </p>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/n_fZrEIx8cM?list=PLb0_DqnplxX8v6l66jOn1Y7vAeAN3Sy1X?ecver=1" frameborder="0" allowfullscreen></iframe>
+    <iframe style="margin-left: 20px;" width="560" height="315" src="https://www.youtube.com/embed/n_fZrEIx8cM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <!-- InstanceEndEditable -->
+    <!-- InstanceBeginEditable name="LeftRightsTwo" -->
     <div class="subLink_left">
     <a href="http://www.databasecontrolpro.appspot.com/1/UsefulLinks.html">Previous</a></div>
     
     <div class="subLink_right">
     <a href="http://www.databasecontrolpro.appspot.com/1/SettingUpDatabaseControlPro.html">Next</a></div>
+    <!-- InstanceEndEditable -->
     </article>
   <div class="footer">
     <div class="line"></div>
     Database Control Pro Documentation. By Solution Studios.</div>
 </div>
 </body>
---></html>
+<!-- InstanceEnd --></html>
